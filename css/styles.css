@@ -4,13 +4,18 @@ body, html {
   padding: 0;
   font-family: Arial, sans-serif;
   min-height: 100%;
+  /* Background Wallpaper */
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /* Header / Hero Section */
 .hero {
   text-align: center;
   padding: 2rem 1rem;
-  background-color: #f5f5f5;
+  background-color: rgba(245, 245, 245, 0.9); /* slight transparency so wallpaper shows */
 }
 
 .avatar {
@@ -30,6 +35,8 @@ nav a {
 /* Main Content */
 main {
   padding: 2rem;
+  /* Ensure content isn’t hidden behind the fixed footer */
+  padding-bottom: 4rem;
 }
 
 /* Projects Section (for index.html) */
@@ -51,18 +58,39 @@ main {
   flex-wrap: wrap;
 }
 
-/* Project image should have a fixed dimension */
+/* Project image with hover effect */
 .project-img {
   width: 100%;
   height: auto;
   max-height: 250px;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-img:hover {
+  transform: scale(1.05);
 }
 
 /* Project details */
 .project-info {
   padding: 1rem;
   flex: 1 1 auto;
+}
+
+/* Optional styling for the View Dashboard link */
+.view-project {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #007acc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.view-project:hover {
+  background-color: #005fa3;
 }
 
 /* Academic Projects Section (for academic-projects.html) */
@@ -72,15 +100,16 @@ main {
   gap: 1.5rem;
 }
 
-/* Fixed Footer */
+/* Fixed Footer (narrower version) */
 .footer {
   background-color: #333;
   color: #fff;
-  padding: 1rem;
+  padding: 0.5rem;  /* reduced padding */
   text-align: center;
   position: fixed;
   width: 100%;
   bottom: 0;
+  font-size: 0.9rem;
 }
 
 .footer a {
