@@ -7,6 +7,9 @@ html, body {
   font-family: Arial, sans-serif;
   min-height: 100%;
   box-sizing: border-box;
+  /* Background image for both index and academic projects pages */
+  background: url("../images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 *, *::before, *::after {
@@ -19,7 +22,7 @@ html, body {
 .hero {
   text-align: center;
   padding: 2rem 1rem;
-  background-color: #f5f5f5; /* Light gray background for the hero area */
+  background-color: rgba(245, 245, 245, 0.9); /* Slight transparency to see background */
 }
 
 .avatar {
@@ -48,15 +51,15 @@ nav {
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  margin: 0 0.5rem;
 }
 
 .nav-button:hover {
   background-color: #005fa3;
 }
 
-/* If you have a direct link (a) in your nav that you want styled as a button: */
+/* Optional style for direct nav links (if not using .nav-button) */
 nav a {
-  margin: 0 1rem;
   text-decoration: none;
   color: #333;
 }
@@ -66,13 +69,12 @@ nav a {
 /* ------------------------------ */
 main {
   padding: 2rem;
-  /* Extra bottom padding so content isn't hidden behind fixed footer */
+  /* Extra bottom padding so content isn't hidden behind the fixed footer */
   padding-bottom: 4rem;
 }
 
 /* ------------------------------ */
-/* INDEX PAGE PROJECTS            */
-/* (Using Flex Layout)            */
+/* INDEX PAGE PROJECTS (Flex)     */
 /* ------------------------------ */
 .projects {
   display: flex;
@@ -104,8 +106,7 @@ main {
 }
 
 /* ------------------------------ */
-/* ACADEMIC PROJECTS PAGE         */
-/* (Using Grid Layout)            */
+/* ACADEMIC PROJECTS PAGE (Grid)  */
 /* ------------------------------ */
 .academic-projects {
   display: grid;
@@ -116,7 +117,6 @@ main {
   justify-items: center; /* center each item horizontally in its cell */
 }
 
-/* Style for each project on the academic page */
 .academic-projects .project-card {
   background-color: #fff;
   padding: 1rem;
@@ -132,7 +132,7 @@ main {
 }
 
 /* ------------------------------ */
-/* VIEW PROJECT BUTTONS           */
+/* VIEW PROJECT BUTTON            */
 /* ------------------------------ */
 .view-project {
   display: inline-block;
