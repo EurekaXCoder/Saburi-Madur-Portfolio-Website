@@ -1,16 +1,25 @@
-/* Global Styles */
-body, html {
+/* ------------------------------ */
+/* GLOBAL STYLES                  */
+/* ------------------------------ */
+html, body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   min-height: 100%;
+  box-sizing: border-box;
 }
 
-/* Header / Hero Section */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* ------------------------------ */
+/* HERO (HEADER) SECTION          */
+/* ------------------------------ */
 .hero {
   text-align: center;
   padding: 2rem 1rem;
-  background-color: #f5f5f5;
+  background-color: #f5f5f5; /* Light gray background for the hero area */
 }
 
 .avatar {
@@ -24,7 +33,9 @@ body, html {
   margin: 0.5rem 0;
 }
 
-/* Navigation (turning link into a button) */
+/* ------------------------------ */
+/* NAVIGATION BUTTON              */
+/* ------------------------------ */
 nav {
   margin-top: 1rem;
 }
@@ -43,14 +54,26 @@ nav {
   background-color: #005fa3;
 }
 
-/* Main Content */
+/* If you have a direct link (a) in your nav that you want styled as a button: */
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #333;
+}
+
+/* ------------------------------ */
+/* MAIN CONTENT                   */
+/* ------------------------------ */
 main {
   padding: 2rem;
-  /* Extra bottom padding if needed for the fixed footer */
+  /* Extra bottom padding so content isn't hidden behind fixed footer */
   padding-bottom: 4rem;
 }
 
-/* Projects Section */
+/* ------------------------------ */
+/* INDEX PAGE PROJECTS            */
+/* (Using Flex Layout)            */
+/* ------------------------------ */
 .projects {
   display: flex;
   flex-wrap: wrap;
@@ -58,7 +81,7 @@ main {
   justify-content: center;
 }
 
-.project-card {
+.projects .project-card {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -66,23 +89,51 @@ main {
   max-width: 500px;
   width: 100%;
   display: flex;
-  flex-direction: column; /* Ensures the image is on top, text below */
+  flex-direction: column;
 }
 
-/* Force images to the same height so text lines up */
-.project-img {
+.projects .project-img {
   width: 100%;
-  height: 220px; /* Adjust as desired */
+  height: 220px;  /* Ensures consistent image height for alignment */
   object-fit: cover;
 }
 
-/* Project details */
-.project-info {
+.projects .project-info {
   padding: 1rem;
   flex: 1 1 auto;
 }
 
-/* View Project / View Dashboard buttons */
+/* ------------------------------ */
+/* ACADEMIC PROJECTS PAGE         */
+/* (Using Grid Layout)            */
+/* ------------------------------ */
+.academic-projects {
+  display: grid;
+  /* 3 columns, each 1 fraction of available space */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  justify-items: center; /* center each item horizontally in its cell */
+}
+
+/* Style for each project on the academic page */
+.academic-projects .project-card {
+  background-color: #fff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  min-height: 200px;  /* Ensures some consistent height */
+}
+
+/* Center the 10th project on its own row */
+.academic-projects .project-card:nth-child(10) {
+  grid-column: 2;  /* Puts the 10th card in the middle column of the 4th row */
+}
+
+/* ------------------------------ */
+/* VIEW PROJECT BUTTONS           */
+/* ------------------------------ */
 .view-project {
   display: inline-block;
   margin-top: 1rem;
@@ -98,7 +149,9 @@ main {
   background-color: #005fa3;
 }
 
-/* Footer */
+/* ------------------------------ */
+/* FOOTER                         */
+/* ------------------------------ */
 .footer {
   background-color: #333;
   color: #fff;
