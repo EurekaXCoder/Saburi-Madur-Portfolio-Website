@@ -4,18 +4,13 @@ body, html {
   padding: 0;
   font-family: Arial, sans-serif;
   min-height: 100%;
-  /* Background Wallpaper */
-  background-image: url('../images/background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 }
 
 /* Header / Hero Section */
 .hero {
   text-align: center;
   padding: 2rem 1rem;
-  background-color: rgba(245, 245, 245, 0.9); /* slight transparency so wallpaper shows */
+  background-color: #f5f5f5;
 }
 
 .avatar {
@@ -25,21 +20,37 @@ body, html {
   object-fit: cover;
 }
 
-/* Navigation links */
-nav a {
-  margin: 0 1rem;
+.tagline {
+  margin: 0.5rem 0;
+}
+
+/* Navigation (turning link into a button) */
+nav {
+  margin-top: 1rem;
+}
+
+.nav-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007acc;
+  color: #fff;
   text-decoration: none;
-  color: #333;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #005fa3;
 }
 
 /* Main Content */
 main {
   padding: 2rem;
-  /* Ensure content isn’t hidden behind the fixed footer */
+  /* Extra bottom padding if needed for the fixed footer */
   padding-bottom: 4rem;
 }
 
-/* Projects Section (for index.html) */
+/* Projects Section */
 .projects {
   display: flex;
   flex-wrap: wrap;
@@ -55,20 +66,14 @@ main {
   max-width: 500px;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column; /* Ensures the image is on top, text below */
 }
 
-/* Project image with hover effect */
+/* Force images to the same height so text lines up */
 .project-img {
   width: 100%;
-  height: auto;
-  max-height: 250px;
+  height: 220px; /* Adjust as desired */
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.project-img:hover {
-  transform: scale(1.05);
 }
 
 /* Project details */
@@ -77,7 +82,7 @@ main {
   flex: 1 1 auto;
 }
 
-/* Optional styling for the View Dashboard link */
+/* View Project / View Dashboard buttons */
 .view-project {
   display: inline-block;
   margin-top: 1rem;
@@ -93,18 +98,11 @@ main {
   background-color: #005fa3;
 }
 
-/* Academic Projects Section (for academic-projects.html) */
-.academic-projects {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* Fixed Footer (narrower version) */
+/* Footer */
 .footer {
   background-color: #333;
   color: #fff;
-  padding: 0.5rem;  /* reduced padding */
+  padding: 0.5rem;
   text-align: center;
   position: fixed;
   width: 100%;
